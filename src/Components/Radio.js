@@ -4,29 +4,25 @@ class Radio extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      value: 'small',
-    }
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.onRadioChange(event.target.value);
   }
 
   render() {
-    const { label } = this.props;
+    const { value, children } = this.props;
 
     return (
-      <div>
-        {label}
+      <span>
+        {children}:
 
         <label>
           <input
             type="radio"
             value="small"
-            checked={this.state.value === 'small'}
+            checked={value === 'small'}
             onChange={this.handleChange}
           />
           Small
@@ -36,7 +32,7 @@ class Radio extends Component {
           <input
             type="radio"
             value="medium"
-            checked={this.state.value === 'medium'}
+            checked={value === 'medium'}
             onChange={this.handleChange}
           />
           Medium
@@ -46,14 +42,12 @@ class Radio extends Component {
           <input
             type="radio"
             value="large"
-            checked={this.state.value === 'large'}
+            checked={value === 'large'}
             onChange={this.handleChange}
           />
           Large
         </label>
-
-        Output: {this.state.value}
-      </div>
+      </span>
     );
   }
 }

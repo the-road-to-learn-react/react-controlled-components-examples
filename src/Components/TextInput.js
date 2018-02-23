@@ -4,30 +4,24 @@ class TextInput extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      value: 'Hello World',
-    }
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.onTextInputChange(event.target.value);
   }
 
   render() {
-    const { label } = this.props;
+    const { value, children } = this.props;
 
     return (
       <label>
-        {label}:
+        {children}:
         <input
           type="text"
           onChange={this.handleChange}
-          value={this.state.value}
+          value={value}
         />
-
-        Output: {this.state.value}
       </label>
     );
   }

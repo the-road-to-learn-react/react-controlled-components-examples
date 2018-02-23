@@ -4,31 +4,25 @@ class Select extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      value: 'grapefruit',
-    }
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.onSelectChange(event.target.value);
   }
 
   render() {
-    const { label } = this.props;
+    const { value, children } = this.props;
 
     return (
       <label>
-        {label}:
-        <select value={this.state.value} onChange={this.handleChange}>
+        {children}:
+        <select value={value} onChange={this.handleChange}>
           <option value="grapefruit">Grapefruit</option>
           <option value="lime">Lime</option>
           <option value="coconut">Coconut</option>
           <option value="mango">Mango</option>
         </select>
-
-        Output: {this.state.value}
       </label>
     );
   }

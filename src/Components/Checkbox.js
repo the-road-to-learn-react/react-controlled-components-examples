@@ -4,30 +4,24 @@ class Checkbox extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      value: true,
-    }
-
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.checked });
+    this.props.onCheckboxChange(event.target.checked);
   }
 
   render() {
-    const { label } = this.props;
+    const { value, children } = this.props;
 
     return (
       <label>
-        {label}:
+        {children}:
         <input
           type="checkbox"
-          checked={this.state.value}
+          checked={value}
           onChange={this.handleChange}
         />
-
-        Output: {this.state.value.toString()}
       </label>
     );
   }

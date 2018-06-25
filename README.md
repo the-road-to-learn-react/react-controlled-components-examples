@@ -1,6 +1,6 @@
 # react-controlled-components-examples
 
-[![Build Status](https://travis-ci.org/the-road-to-learn-react/react-controlled-components-examples.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/react-controlled-components-examples)
+[![Build Status](https://travis-ci.org/the-road-to-learn-react/react-controlled-components-examples.svg?branch=master)](https://travis-ci.org/the-road-to-learn-react/react-controlled-components-examples) [![Slack](https://slack-the-road-to-learn-react.wieruch.com/badge.svg)](https://slack-the-road-to-learn-react.wieruch.com/)
 
 ## Installation
 

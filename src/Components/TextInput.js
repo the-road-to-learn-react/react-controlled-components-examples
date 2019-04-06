@@ -1,30 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class TextInput extends Component {
-  constructor(props) {
-    super(props);
+const TextInput = ({ value, onTextInputChange, children }) => {
+  const handleChange = event => {
+    onTextInputChange(event.target.value);
+  };
 
-    this.handleChange = this.handleChange.bind(this);
-  }
-
-  handleChange(event) {
-    this.props.onTextInputChange(event.target.value);
-  }
-
-  render() {
-    const { value, children } = this.props;
-
-    return (
-      <label>
-        {children}:
-        <input
-          type="text"
-          onChange={this.handleChange}
-          value={value}
-        />
-      </label>
-    );
-  }
-}
+  return (
+    <label>
+      {children}:
+      <input type="text" onChange={handleChange} value={value} />
+    </label>
+  );
+};
 
 export default TextInput;

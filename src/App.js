@@ -15,14 +15,14 @@ import Checkbox from './Components/Checkbox';
 import Radio from './Components/Radio';
 
 const App = () => {
-  const [textInputValue, setRextInputValue] = useState('Hello World');
+  const [textInputValue, setTextInputValue] = useState('Hello World');
   const [selectValue, setSelectValue] = useState('grapefruit');
   const [numberInputValue, setNumberInputValue] = useState(0);
   const [checkboxValue, setCheckboxValue] = useState(true);
   const [radioValue, setRadioValue] = useState('small');
 
   const handleTextInputChange = value => {
-    setRextInputValue(value);
+    setTextInputValue(value);
   };
 
   const handleSelectChange = value => {
